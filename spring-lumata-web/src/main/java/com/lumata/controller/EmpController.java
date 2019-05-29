@@ -14,29 +14,36 @@ import com.lumata.dao.EmpDao;
 @Controller    
 public class EmpController {    
     @Autowired  
-    EmpDao dao;//will inject dao from XML file    
+    EmpDao dao,dao2, dao3;//will inject dao from XML file    
         
     /*It displays a form to input data, here "command" is a reserved request attribute  
      *which is used to display object data into form  
      */    
       
-    @RequestMapping("/viewemp")    
+   @RequestMapping("/viewemp")    
     public String viewemp(Model m){    
         List<Emp> list=dao.getEmployees();
-       /* Calendar c = Calendar.getInstance();
-        c.setFirstDayOfWeek(Calendar.MONDAY);
        
-        int today = c.get(Calendar.DAY_OF_WEEK);
-        c.add(Calendar.DAY_OF_WEEK, -today+Calendar.MONDAY);
-        System.out.println("Date "+c.getTime());*/
-        
-        
-         
-        
         System.out.println("size:"+list.size());
         m.addAttribute("list",list);  
-        return "viewemp";    
-    }    
-     
+        return "viewemp";   
         
+    }    
+    
+    	 @RequestMapping("/feb")    
+    	    public String feb(Model m){    
+    	        List<Emp> list=dao2.getEmployees1();
+    	       
+    	        System.out.println("size:"+list.size());
+    	        m.addAttribute("list",list);  
+    	        return "feb";    
+    }
+    	 @RequestMapping("/march")    
+ 	    public String march(Model m){    
+ 	        List<Emp> list=dao3.getEmployees2();
+ 	       
+ 	        System.out.println("size:"+list.size());
+ 	        m.addAttribute("list",list);  
+ 	        return "march";    
+ }
 }  

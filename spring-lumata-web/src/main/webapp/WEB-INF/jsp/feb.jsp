@@ -10,7 +10,7 @@
    <%@page import="java.util.*" %>
    <%@page import="com.google.gson.*" %>
  
- <%
+ <% 
 Gson gsonObj = new Gson();
 Map<Object,Object> map = null;
 List<Map<Object,Object>> list = new ArrayList<Map<Object,Object>>();
@@ -64,7 +64,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light1",
 	title: {
-		text: "Working Hours of January"
+		text: "Working Hours of February"
 	},
 	subtitles: [{
 		text: ""
@@ -83,50 +83,46 @@ chart.render();
 </script>  
 </head>
 <body>  
-<h1>Employees List of Jan Month 2019 </h1>  
+<h1>Feb List of Feb Month 2019 </h1>  
 <table border="2" width="70%" cellpadding="2">  
-<tr><th>Emp_id</th><th>Emp_Name</th><th>Jan1</th><th>Jan2</th><th>Jan3</th><th>Jan4</th><th>Jan5</th><th>Jan6</th><th>Jan7</th><th>Jan8</th><th>Jan9</th><th>Jan10</th><th>Jan11</th><th>Jan12</th><th>Jan13</th><th>Jan14</th><th>Jan15</th><th>jan16</th><th>Jan17</th><th>Jan18</th><th>Jan19</th><th>Jan20</th><th>jan21</th><th>jan22</th><th>Jan23</th><th>Jan24</th><th>Jan25</th><th>Jan26</th><th>Jan27</th><th>Jan28</th><th>Jan29</th><th>Jan30</th><th>Jan31</th></tr>  
+<tr><th>Emp_id</th><th>Emp_Name</th><th>feb1</th><th>feb2</th><th>feb3</th><th>feb4</th><th>feb5</th><th>feb6</th><th>feb7</th><th>feb8</th><th>feb9</th><th>feb10</th><th>feb11</th><th>feb12</th><th>feb13</th><th>feb14</th><th>feb15</th><th>feb16</th><th>feb17</th><th>feb18</th><th>feb19</th><th>feb20</th><th>feb21</th><th>feb22</th><th>feb23</th><th>feb24</th><th>feb25</th><th>feb26</th><th>feb27</th><th>feb28</th></th></tr>  
 
-   <c:forEach var="emp" items="${list}">   
+   <c:forEach var="feb" items="${list}">   
     <tr>  
-   <td>${emp.id} </td>  
-   <td>${emp.emp_name}</td>  
-  <td>${emp.day1}</td>  
-   <td>${emp.day2}</td>
-   <td>${emp.day3}</td>
-   <td>${emp.day4}</td>
-   <td>${emp.day5}</td>
-   <td>${emp.day6}</td>
-   <td>${emp.day7}</td>
-   <td>${emp.day8}</td>
-   <td>${emp.day9}</td>
-   <td>${emp.day10}</td>
-   <td>${emp.day11}</td>
-   <td>${emp.day12}</td>
-   <td>${emp.day13}</td>
-   <td>${emp.day14}</td>
-   <td>${emp.day15}</td>
-   <td>${emp.day16}</td>
-   <td>${emp.day17}</td>
-   <td>${emp.day18}</td>
-   <td>${emp.day19}</td>
-   <td>${emp.day20}</td>
-   <td>${emp.day21}</td>  
-   <td>${emp.day22}</td>
-   <td>${emp.day23}</td>
-   <td>${emp.day24}</td>
-   <td>${emp.day25}</td>
-   <td>${emp.day26}</td>
-   <td>${emp.day27}</td>
-   <td>${emp.day28}</td>
-   <td>${emp.day29}</td>
-   <td>${emp.day30}</td>
-   <td>${emp.day31 }</td> 
+   <td>${feb.id} </td>  
+   <td>${feb.emp_name}</td>  
+  <td>${feb.day1}</td>  
+   <td>${feb.day2}</td>
+   <td>${feb.day3}</td>
+   <td>${feb.day4}</td>
+   <td>${feb.day5}</td>
+   <td>${feb.day6}</td>
+   <td>${feb.day7}</td>
+   <td>${feb.day8}</td>
+   <td>${feb.day9}</td>
+   <td>${feb.day10}</td>
+   <td>${feb.day11}</td>
+   <td>${feb.day12}</td>
+   <td>${feb.day13}</td>
+   <td>${feb.day14}</td>
+   <td>${feb.day15}</td>
+   <td>${feb.day16}</td>
+   <td>${feb.day17}</td>
+   <td>${feb.day18}</td>
+   <td>${feb.day19}</td>
+   <td>${feb.day20}</td>
+   <td>${feb.day21}</td>  
+   <td>${feb.day22}</td>
+   <td>${feb.day23}</td>
+   <td>${feb.day24}</td>
+   <td>${feb.day25}</td>
+   <td>${feb.day26}</td>
+   <td>${feb.day27}</td>
+   <td>${feb.day28}</td>
    </c:forEach>  
     </table>
- <!--    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>   
- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
-    <h1>Employee Details</h1>
+
+     <h1>Employee Details</h1>
    <table border="2" width="70%" cellpadding="2">  
    <tr><th>Emp_id</th><th>Emp_Name</th></tr>
     <c:forEach var="emp" items="${list}">   
@@ -137,7 +133,7 @@ chart.render();
     </table> <br>  
     <h1> week1</h1>
     <table border="2" width="70%" cellpadding="2">
-    <tr><th>Emp_id</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th> <th>Total hours</th>
+    <tr><th>Emp_id</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th> <th>Total hours</th>
    <c:forEach var="emp" items="${list}">   
     <tr>  
   <td>${emp.id}</td> 
@@ -148,11 +144,11 @@ chart.render();
    <td>${emp.day5}</td>
    <td>${emp.day6}</td>
    <td>${emp.day7}</td> 
-   <td>${emp.day1+emp.day2+emp.day3+emp.day4+emp.day7}</td> 
+   <td>${emp.day1+emp.day4+emp.day5+emp.day6+emp.day7}</td> 
      
    </tr>
 </c:forEach>
- <c:forEach var="emp" items="${list}">      
+<c:forEach var="emp" items="${list}">      
    <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 google.charts.load("current", {packages:["corechart"]});
@@ -161,12 +157,12 @@ function drawChart() {
 	
 var data = google.visualization.arrayToDataTable([
 ['', 'Hours per Day'],
-['Tuesday',${emp.day1}],
-['Wednesday', ${emp.day2}],
-['Thursday', ${emp.day3}],
-['Friday', ${emp.day4}],
+['Friday',${emp.day1}],
+['Monday', ${emp.day4}],
+['Tuesday', ${emp.day5}],
+['Wednesday', ${emp.day6}],
 
-['Monday',${emp.day7}]
+['Thursday',${emp.day7}]
 ]);
 
 var options = {
@@ -184,11 +180,13 @@ chart.draw(data, options);
     <div id="donutchart" style="width: 900px; height: 500px;"></div>
   
     <table border="2" width="70%" cellpadding="2">
-     <h1> week2</h1>
-    <tr><th>Emp_id</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th> <th>Total hours</th>
+  
+    <h1> week2</h1>
+    <table border="2" width="70%" cellpadding="2">
+    <tr><th>Emp_id</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th> <th>Total hours</th>
    <c:forEach var="emp" items="${list}">   
     <tr>  
-   <td>${emp.id} </td> 
+  <td>${emp.id}</td> 
    <td>${emp.day8}</td>  
    <td>${emp.day9}</td>
    <td>${emp.day10}</td>
@@ -196,15 +194,17 @@ chart.draw(data, options);
    <td>${emp.day12}</td>
    <td>${emp.day13}</td>
    <td>${emp.day14}</td> 
-   <td>${emp.day8+emp.day9+emp.day10+emp.day11+emp.day14}</td> 
-   
+   <td>${emp.day8+emp.day11+emp.day12+emp.day13+emp.day14}</td> 
+     
+   </tr>
    </c:forEach>  
    <table border="2" width="70%" cellpadding="2">
-     <h1> week3</h1>
-    <tr><th>Emp_id</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th> <th>Total hours</th>
+        <h1> week3</h1>
+    <table border="2" width="70%" cellpadding="2">
+    <tr><th>Emp_id</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th> <th>Total hours</th>
    <c:forEach var="emp" items="${list}">   
     <tr>  
-  <td>${emp.id} </td> 
+  <td>${emp.id}</td> 
    <td>${emp.day15}</td>  
    <td>${emp.day16}</td>
    <td>${emp.day17}</td>
@@ -212,16 +212,17 @@ chart.draw(data, options);
    <td>${emp.day19}</td>
    <td>${emp.day20}</td>
    <td>${emp.day21}</td> 
-   <td>${emp.day15+emp.day16+emp.day17+emp.day18+emp.day21}</td> 
-   
+   <td>${emp.day15+emp.day18+emp.day19+emp.day20+emp.day21}</td> 
+     
+   </tr>
    </c:forEach>  
    <table border="2" width="70%" cellpadding="2">
-     <h1> week4</h1>
-    <tr><th>Emp_id</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th> <th>Total hours</th>
-   <c:forEach var="emp" items="${list}">  
+        <h1> week4</h1>
+    <table border="2" width="70%" cellpadding="2">
+    <tr><th>Emp_id</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th> <th>Total hours</th>
+   <c:forEach var="emp" items="${list}">   
     <tr>  
-    
-  <td>${emp.id} </td> 
+  <td>${emp.id}</td> 
    <td>${emp.day22}</td>  
    <td>${emp.day23}</td>
    <td>${emp.day24}</td>
@@ -229,25 +230,11 @@ chart.draw(data, options);
    <td>${emp.day26}</td>
    <td>${emp.day27}</td>
    <td>${emp.day28}</td> 
-    <td>${emp.day22+emp.day23+emp.day24+emp.day25+emp.day28}</td> 
-   
-   </c:forEach>  
-    <table border="2" width="70%" cellpadding="2">
-     <h1> week5</h1>
-    <tr><th>Emp_id</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th><th>Monday</th><th>Total hours</th>
-   <c:forEach var="emp" items="${list}"> 
-    <tr>  
-   <td>${emp.id} </td> 
-   <td>${emp.day29}</td>  
-   <td>${emp.day30}</td>
-   <td>${emp.day31}</td>
-   <td></td>
-   <td></td>
-   <td></td>
-   <td></td>
-   <td>${emp.day29+emp.day30+emp.day31}</td> 
+   <td>${emp.day22+emp.day25+emp.day26+emp.day27+emp.day28}</td> 
+     
    </tr>
    </c:forEach>  
+  
    </body>
    </html> 
    
