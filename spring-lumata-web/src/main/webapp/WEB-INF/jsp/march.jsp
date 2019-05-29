@@ -1,129 +1,106 @@
 <!--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%> -->
+pageEncoding="ISO-8859-1"%> -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
- <%@page import="java.util.Scanner"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- <%@ page isELIgnored="false" %>
-  <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
-   <%@ page import="com.google.gson.Gson"%>
-   <%@ page import="com.google.gson.JsonObject"%>
-   <%@page import="java.util.*" %>
-   <%@page import="com.google.gson.*" %>
- 
- <% 
-Gson gsonObj = new Gson();
-Map<Object,Object> map = null;
-List<Map<Object,Object>> list = new ArrayList<Map<Object,Object>>();
- 
-map = new HashMap<Object,Object>();
-map.put("label", "Day1"); 
-map.put("y", 7); 
-list.add(map);
+<%@page import="java.util.Scanner"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+<%@ page import="com.google.gson.Gson"%>
+<%@ page import="com.google.gson.JsonObject"%>
+<%@page import="java.util.*" %>
+<%@page import="com.google.gson.*" %>
 
-map = new HashMap<Object,Object>(); map.put("label", "Day2"); map.put("y", 9); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day3"); map.put("y", 6); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day4"); map.put("y", 8); list.add(map);
-
-map = new HashMap<Object,Object>(); map.put("label", "Day7"); map.put("y", 8); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day8"); map.put("y", 4); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day9"); map.put("y", 8); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day10"); map.put("y", 10); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day11"); map.put("y", 8); list.add(map);
-
-map = new HashMap<Object,Object>(); map.put("label", "Day14"); map.put("y", 7); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day15"); map.put("y", 5); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day16"); map.put("y", 9); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day17"); map.put("y", 10); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day18"); map.put("y", 9); list.add(map);
-
-map = new HashMap<Object,Object>(); map.put("label", "Day21"); map.put("y", 8); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day22"); map.put("y", 8); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day23"); map.put("y", 8); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day24"); map.put("y", 9); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day25"); map.put("y", 7.10); list.add(map);
-
-map = new HashMap<Object,Object>(); map.put("label", "Day28"); map.put("y", 6.4); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day29"); map.put("y", 9.6); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day30"); map.put("y", 8.1); list.add(map);
-map = new HashMap<Object,Object>(); map.put("label", "Day31"); map.put("y", 5.9); list.add(map);
-
-String dataPoints = gsonObj.toJson(list);
-
-%>
- 
- 
- 
 
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript">
-window.onload = function() { 
- 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "light1",
-	title: {
-		text: "Working Hours of march"
-	},
-	subtitles: [{
-		text: ""
-	}],
-	data: [{
-		type: "doughnut",
-		yValueFormatString: "#,##0",
-		indexLabel: "{label}: {y} Hours",
-		toolTipContent: "{y} Hours tonnes",
-		dataPoints : <%out.print(dataPoints);%>
-	}]
-});
-chart.render();
- 
-}
-</script>  
-</head>
-<body>  
-<h1>March List of  Month 2019 </h1>  
-<table border="2" width="70%" cellpadding="2">  
-<tr><th>Emp_id</th><th>Emp_Name</th><th>march1</th><th>march2</th><th>march3</th><th>march4</th><th>march5</th><th>march6</th><th>march7</th><th>march8</th><th>march9</th><th>march10</th><th>march11</th><th>march12</th><th>march13</th><th>march14</th><th>march15</th><th>march16</th><th>march17</th><th>march18</th><th>march19</th><th>march20</th><th>march21</th><th>march22</th><th>march23</th><th>march24</th><th>march25</th><th>march26</th><th>march27</th><th>march28</th><th>march29</th><th>march30</th><th>march31</th></tr>  
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ </head>
+<body> 
+   <h1>Employee Attandence of march Month 2019 </h1> 
+    <table border="2" width="70%" cellpadding="2"> 
+    <tr><th>Emp_id</th><th>Emp_Name</th><th>1st March</th><th>2nd March</th><th>3rd March</th><th>4th March</th><th>5th March</th><th>6th March</th><th>7th March</th><th>8th March</th><th>9th March</th><th>10th March</th><th>11th March</th><th>12th March</th><th>13 March</th><th>14 March</th><th>15 March</th><th>16 March</th><th>17 March</th><th>18 March</th><th>19 March</th><th>20 March</th><th>21 March</th><th>22 March</th><th>23 March</th><th>24 March</th><th>25 March</th><th>26 March</th><th>27 March</th><th>28 March</th><th>29 March</th><th>30 March</th><th>31 March</th></tr>  
+    <c:forEach var="march" items="${list}"> 
+	<tr> 
+	<td>${march.id} </td> 
+	<td>${march.emp_name}</td> 
+	<td>${march.day1}</td> 
+	<td>${march.day2}</td>
+	<td>${march.day3}</td>
+	<td>${march.day4}</td>
+	<td>${march.day5}</td>
+	<td>${march.day6}</td>
+	<td>${march.day7}</td>
+	<td>${march.day8}</td>
+	<td>${march.day9}</td>
+	<td>${march.day10}</td>
+	<td>${march.day11}</td>
+	<td>${march.day12}</td>
+	<td>${march.day13}</td>
+	<td>${march.day14}</td>
+	<td>${march.day15}</td>
+	<td>${march.day16}</td>
+	<td>${march.day17}</td>
+	<td>${march.day18}</td>
+	<td>${march.day19}</td>
+	<td>${march.day20}</td>
+	<td>${march.day21}</td> 
+	<td>${march.day22}</td>
+	<td>${march.day23}</td>
+	<td>${march.day24}</td>
+	<td>${march.day25}</td>
+	<td>${march.day26}</td>
+	<td>${march.day27}</td>
+	<td>${march.day28}</td>
+	<td>${march.day29}</td>
+	<td>${march.day30}</td>
+	<td>${march.day31}</td>
+	</tr>
+	</table>
+	
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['1 March',${march.day1}],
+            ['4 March',${march.day4}],
+            ['5 March',${march.day5}],
+            ['6 March',${march.day6}],
+            ['7 March',${march.day7}],
+            ['8 March',${march.day8}],
+            ['11 March',${march.day11}],
+            ['12 March',${march.day12}],
+            ['13 March',${march.day13}],
+            ['14 March',${march.day14}],
+            ['15 March',${march.day15}],
+            ['18 March',${march.day18}],
+            ['19 March',${march.day19}],
+            ['20 March',${march.day20}],
+            ['21 March',${march.day21}],
+            ['22 March',${march.day22}],
+            ['25 March',${march.day25}],
+            ['26 March',${march.day26}],
+            ['27 March',${march.day27}],
+            ['28 March',${march.day28}],
+            ['29 March',${march.day29}]
+              
+        
+          ]);
 
-   <c:forEach var="march" items="${list}">   
-    <tr>  
-   <td>${march.id} </td>  
-   <td>${march.emp_name}</td>  
-   <td>${march.day1}</td>  
-   <td>${march.day2}</td>
-   <td>${march.day3}</td>
-   <td>${march.day4}</td>
-   <td>${march.day5}</td>
-   <td>${march.day6}</td>
-   <td>${march.day7}</td>
-   <td>${march.day8}</td>
-   <td>${march.day9}</td>
-   <td>${march.day10}</td>
-   <td>${march.day11}</td>
-   <td>${march.day12}</td>
-   <td>${march.day13}</td>
-   <td>${march.day14}</td>
-   <td>${march.day15}</td>
-   <td>${march.day16}</td>
-   <td>${march.day17}</td>
-   <td>${march.day18}</td>
-   <td>${march.day19}</td>
-   <td>${march.day20}</td>
-   <td>${march.day21}</td>  
-   <td>${march.day22}</td>
-   <td>${march.day23}</td>
-   <td>${march.day24}</td>
-   <td>${march.day25}</td>
-   <td>${march.day26}</td>
-   <td>${march.day27}</td>
-   <td>${march.day28}</td>
-   <td>${march.day29}</td>
-   <td>${march.day30}</td>
-   <td>${march.day31}</td>
-   </c:forEach>  
-    </table>
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+    </c:forEach>
+     <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+
 
      <h1>Employee Details</h1>
    <table border="2" width="70%" cellpadding="2">  
